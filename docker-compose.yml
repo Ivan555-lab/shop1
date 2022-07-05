@@ -1,0 +1,16 @@
+version: '3.10'
+services:
+  web:
+   build: .
+   command: python /a2/manage.py runserver 0.0.0.0:8000
+   volumes:
+     - .:/a2
+   ports:
+     - 8000:8000
+   depends_on:
+     - db
+  db:
+    image: postgres
+    environment:
+      POSTGRES_DB: "db"
+      POSTGRES_HOST_AUTH_METHOD: "trust"

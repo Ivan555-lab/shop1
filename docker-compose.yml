@@ -2,11 +2,11 @@ version: '3.10'
 services:
   web:
    build: .
-   command: python /a2/manage.py runserver 0.0.0.0:8000
+   command: python /a3/manage.py runserver 0.0.0.0:8003
    volumes:
-     - .:/a2
+     - .:/a3
    ports:
-     - 8000:8000
+     - 8003:8003
    depends_on:
      - db
   db:
